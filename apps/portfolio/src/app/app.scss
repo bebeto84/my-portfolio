@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+main {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: clamp(3rem, 10vw, 7rem) 1.5rem;
+}
+
+.eyebrow {
+  color: #475569;
+  font-size: 0.875rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
