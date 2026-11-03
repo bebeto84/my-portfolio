@@ -129,56 +129,59 @@ export const suprnationExperience: CompanyExperienceContent = {
   company: 'SuprNation',
   role: 'Senior Frontend Engineer',
   dates: 'September 2020 — October 2024',
-  focus: 'Nx · UX · Performance · Jenkins',
-  heroTitle: 'Modernising multi-brand',
-  heroAccent: 'gaming frontends.',
+  focus: 'Nx · Design systems · Web Vitals · WebSockets',
+  heroTitle: 'Three brands, one',
+  heroAccent: 'shared frontend platform.',
   summary:
-    'I worked on modernising multi-brand gaming frontends through an Nx migration, UX and performance improvements, shared design foundations, and optimised Jenkins delivery pipelines.',
+    'I introduced Nx to bring three gaming brands onto a shared frontend platform, with reusable libraries and a design system. I also improved Web Vitals, supporting high-demand 24/7 websites with WebSocket features and on-shift operations.',
   sections: [
     {
       id: 'frontend-foundations',
       number: '01',
-      label: 'FRONTEND FOUNDATIONS',
-      eyebrow: 'MULTI-BRAND FRONTENDS',
-      title: 'Modernising the product foundations.',
+      label: 'SHARED FRONTEND PLATFORM',
+      eyebrow: 'THREE BRANDS, SHARED LIBRARIES',
+      title: 'One Nx workspace for three brands.',
       description:
-        'The work combined an Nx migration with UX and performance improvements and shared design foundations across multi-brand gaming frontends.',
+        'I introduced Nx to build three brand frontends with shared libraries. Local Nx caching helped speed up builds and delivery, while shared components provided a reusable design system.',
       cards: [
         {
-          title: 'Nx migration',
-          description: 'Modernised the frontend through a migration to Nx.',
+          title: 'Nx workspace',
+          description:
+            'Built three brand frontends in Nx with shared libraries and local caching.',
         },
         {
-          title: 'Shared design foundations',
+          title: 'Reusable design system',
           description:
-            'Contributed shared foundations for multi-brand experiences.',
+            'Created a design system from reusable shared components.',
         },
         {
-          title: 'UX and performance',
+          title: '24/7 product operations',
           description:
-            'Worked on improvements to user experience and frontend performance.',
+            'Supported high-demand websites through on-shift engineering roles.',
         },
       ],
     },
     {
-      id: 'delivery-pipelines',
+      id: 'performance-and-realtime',
       number: '02',
-      label: 'DELIVERY',
-      eyebrow: 'JENKINS PIPELINES',
-      title: 'Jenkins delivery pipelines.',
+      label: 'PERFORMANCE & REAL-TIME',
+      eyebrow: 'WEB VITALS · WEBSOCKETS',
+      title: 'Fast pages and live communication.',
       description:
-        'I optimised Jenkins delivery pipelines as part of the frontend modernisation work.',
+        'I worked on frontend performance with Web Vitals in mind, reducing load by 20–30%. The products also used WebSocket communication for real-time features.',
       cards: [
         {
-          title: 'Jenkins',
-          description: 'Optimised delivery pipelines for frontend projects.',
+          title: 'Web Vitals',
+          description:
+            'Performance improvements cut load by 20–30%.',
         },
         {
-          title: 'Frontend modernisation',
-          description: 'Modernised multi-brand gaming frontends.',
+          title: 'WebSocket communication',
+          description:
+            'Worked on real-time communication across the websites.',
         },
       ],
     },
   ],
-  contactText: 'Want to talk about frontend architecture and product engineering?',
+  contactText: 'Want to talk about frontend platforms, performance, or real-time products?',
 };

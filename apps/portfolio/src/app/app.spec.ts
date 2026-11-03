@@ -22,6 +22,12 @@ describe('portfolio routes', () => {
     expect(page.querySelector('#work h2')?.textContent).toContain(
       'Selected work',
     );
+    expect(page.querySelector('#suprnation-title')?.textContent).toContain(
+      'Three brands, one shared platform',
+    );
+    expect(
+      page.querySelector('#suprnation a[href="/experience/suprnation#frontend-foundations"]'),
+    ).not.toBeNull();
   });
 
   it('renders the Usheru experience page', async () => {
@@ -43,7 +49,7 @@ describe('portfolio routes', () => {
     );
 
     const page = harness.routeNativeElement as HTMLElement;
-    expect(page.querySelector('h1')?.textContent).toContain('gaming frontends');
+    expect(page.querySelector('h1')?.textContent).toContain('shared frontend');
     expect(page.querySelector('#frontend-foundations')).not.toBeNull();
   });
 });
