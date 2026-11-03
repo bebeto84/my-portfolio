@@ -96,6 +96,23 @@ describe('portfolio routes', () => {
     await harness.fixture.whenStable();
     expect(usheruFourthStar?.disabled).toBe(false);
 
+    usheruFourthStar?.dispatchEvent(new MouseEvent('mouseenter'));
+    await harness.fixture.whenStable();
+    expect(
+      [...page.querySelectorAll<HTMLButtonElement>(
+        '#work article:first-child .rating-options button',
+      )].map((button) => button.classList.contains('previewed')),
+    ).toEqual([true, true, true, true, false]);
+    usheruFourthStar
+      ?.closest('.rating-options')
+      ?.dispatchEvent(new MouseEvent('mouseleave'));
+    await harness.fixture.whenStable();
+    expect(
+      page.querySelector(
+        '#work article:first-child .rating-options button.filled',
+      ),
+    ).toBeNull();
+
     usheruFourthStar?.click();
     suprnationFifthStar?.click();
     await harness.fixture.whenStable();

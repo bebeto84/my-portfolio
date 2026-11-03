@@ -1,4 +1,4 @@
-import { computed, Component, input, inject } from '@angular/core';
+import { computed, Component, input, inject, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   RateableItemId,
@@ -23,12 +23,24 @@ export class RatingControl {
   readonly itemId = input.required<RateableItemId>();
   readonly itemLabel = input.required<string>();
   readonly ratingValues = ratingValues;
+  readonly previewRating = signal<RatingValue | null>(null);
   readonly ratings = this.store.selectSignal(selectVisitorRatings);
   readonly restored = this.store.selectSignal(selectRatingsRestored);
   readonly storageAvailable = this.store.selectSignal(
     selectRatingStorageAvailable,
   );
   readonly currentRating = computed(() => this.ratings()[this.itemId()] ?? null);
+  readonly displayedRating = computed(
+    () => this.previewRating() ?? this.currentRating(),
+  );
+
+  preview(rating: RatingValue): void {
+    this.previewRating.set(rating);
+  }
+
+  clearPreview(): void {
+    this.previewRating.set(null);
+  }
 
   setRating(rating: RatingValue): void {
     this.store.dispatch(

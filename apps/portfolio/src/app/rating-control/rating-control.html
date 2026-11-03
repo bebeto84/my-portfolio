@@ -1,16 +1,26 @@
 <div class="rating-control" [attr.aria-busy]="!restored()">
   <p class="rating-caption">
-    <strong>Rate this work</strong>
-    <span>Choose 1–5 stars · your rating is saved for this tab.</span>
+    <strong><span aria-hidden="true">✦</span> Rate this work</strong>
+    <span>Hover to preview, then click to choose 1–5 stars.</span>
   </p>
-  <div class="rating-options" role="group" [attr.aria-label]="'Your rating for ' + itemLabel()">
+  <div
+    class="rating-options"
+    role="group"
+    [attr.aria-label]="'Your rating for ' + itemLabel()"
+    (mouseleave)="clearPreview()"
+  >
     @for (rating of ratingValues; track rating) {
       <button
         type="button"
         [disabled]="!restored()"
         [attr.aria-label]="'Rate ' + itemLabel() + ' ' + rating + ' out of 5'"
         [attr.aria-pressed]="currentRating() === rating"
-        [class.filled]="rating <= (currentRating() ?? 0)"
+        [class.filled]="rating <= (displayedRating() ?? 0)"
+        [class.previewed]="previewRating() !== null && rating <= (previewRating() ?? 0)"
+        [class.picked]="currentRating() === rating"
+        (mouseenter)="preview(rating)"
+        (focus)="preview(rating)"
+        (blur)="clearPreview()"
         (click)="setRating(rating)"
       >
         ★
