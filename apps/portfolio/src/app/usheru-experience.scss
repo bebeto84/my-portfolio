@@ -1,0 +1,391 @@
+:host {
+  display: block;
+}
+
+.experience-page {
+  /* Map usheru's official navy and light-blue logo colours to semantic tokens. */
+  --color-surface: #f2fbfa;
+  --color-surface-raised: #fff;
+  --color-text: #041928;
+  --color-text-muted: #53666d;
+  --color-border: #cfdfde;
+  --color-action: #041928;
+  --color-action-hover: #12394a;
+  --color-on-action: #dffffd;
+  --color-selected: #dffffd;
+  --color-disabled: #e3ebea;
+  --color-on-disabled: #718187;
+  --color-accent: #dffffd;
+  --color-focus: #041928;
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --radius-card: 1.2rem;
+  --radius-control: 999px;
+
+  color: var(--color-text);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-block: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.back-link:hover,
+.project-link:hover {
+  color: var(--color-action);
+}
+
+.experience-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr);
+  align-items: end;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(2rem, 6vw, 5rem);
+  border-radius: 1.4rem;
+  background: var(--color-action);
+  color: var(--color-on-action);
+}
+
+.experience-intro .eyebrow {
+  display: flex;
+  align-items: center;
+  color: #dffffd;
+}
+
+.brand-mark {
+  display: inline-grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  margin-right: 0.6rem;
+  place-items: center;
+  border: 1px solid #dffffd;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.experience-hero h1 {
+  margin-block: 1.4rem 1rem;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6.5vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.99;
+}
+
+.experience-hero h1 span {
+  color: #dffffd;
+  font-style: italic;
+}
+
+.experience-lede {
+  max-width: 37rem;
+  margin: 0;
+  color: #e4f0ef;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.role-card {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #ffffff32;
+  border-radius: 1rem;
+  background: #ffffff0b;
+}
+
+.role-card div {
+  padding-block: 0.85rem;
+  border-bottom: 1px solid #ffffff28;
+}
+
+.role-card div:last-child {
+  border-bottom: 0;
+}
+
+.role-card dt {
+  color: #b9d2d1;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.role-card dd {
+  margin: 0.28rem 0 0;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 550;
+}
+
+.experience-section {
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-number {
+  margin-bottom: 1.7rem;
+  color: var(--color-action);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.section-number span {
+  color: var(--color-text-muted);
+  font-size: 0.62rem;
+}
+
+.section-copy {
+  max-width: 46rem;
+}
+
+.section-copy .eyebrow,
+.engineering-practice .eyebrow {
+  color: var(--color-text-muted);
+}
+
+.section-copy h2,
+.engineering-practice h2 {
+  margin-block: 0.8rem 1rem;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.section-copy > p:last-child,
+.engineering-practice > p:last-of-type {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  min-height: 12rem;
+  padding: 1.35rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+}
+
+.feature-icon {
+  display: inline-grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-selected);
+  color: var(--color-action);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.feature-card h3,
+.workflow-steps h3 {
+  margin: 1.4rem 0 0.4rem;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.feature-card p,
+.workflow-steps p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+
+.workflow-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  column-gap: clamp(2rem, 7vw, 6rem);
+  row-gap: 1.5rem;
+}
+
+.workflow-section .section-number {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.workflow-steps {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-steps li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.8rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.workflow-steps li > span {
+  padding-top: 0.15rem;
+  color: var(--color-action);
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.workflow-steps h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+}
+
+.engineering-practice {
+  max-width: 47rem;
+  padding-block: clamp(3rem, 7vw, 5rem);
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.technology-list span {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  color: var(--color-text-muted);
+  font-size: 0.67rem;
+}
+
+.experience-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: 1rem;
+  background: var(--color-selected);
+}
+
+.experience-contact > p {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-links a {
+  color: var(--color-action);
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-links a span {
+  margin-left: 0.3rem;
+}
+
+.experience-contact a:focus-visible,
+.back-link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .experience-hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .role-card {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .role-card div {
+    border: 0;
+  }
+
+  .workflow-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .back-link {
+    margin-block: 1rem;
+  }
+
+  .experience-hero {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .experience-hero h1 {
+    font-size: clamp(2.8rem, 13vw, 4.4rem);
+  }
+
+  .experience-lede {
+    font-size: 0.84rem;
+  }
+
+  .role-card {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+  }
+
+  .role-card div {
+    padding-block: 0.7rem;
+    border-bottom: 1px solid #ffffff28;
+  }
+
+  .role-card div:last-child {
+    border-bottom: 0;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .feature-card h3 {
+    margin-top: 0.9rem;
+  }
+
+  .experience-contact {
+    align-items: start;
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+}
