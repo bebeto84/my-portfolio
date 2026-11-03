@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  /* SuprNation orange and charcoal from the official site. */
+  --color-surface: #fff9f2;
+  --color-surface-raised: #fff;
+  --color-text: #151515;
+  --color-text-muted: #57524c;
+  --color-border: #eadfce;
+  --color-action: #151515;
+  --color-action-hover: #333;
+  --color-on-action: #fff9f2;
+  --color-selected: #fde9d1;
+  --color-disabled: #eee8e0;
+  --color-on-disabled: #69615a;
+  --color-accent: #f99314;
+  --color-focus: #8b4300;
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --radius-card: 1.2rem;
+  --radius-control: 999px;
+}

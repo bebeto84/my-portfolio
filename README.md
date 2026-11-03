@@ -39,8 +39,9 @@ content already rendered. The output is static and does not need a Node server.
 - Responsive portfolio shell with keyboard focus styles, reduced-motion
   support, and a small semantic colour and typography token set.
 - Angular prerendering for the home route with hydration for client interaction.
-- A prerendered Usheru experience route with a scoped theme based on the
-  [official brand guide](https://usheru.com/branding/).
+- Prerendered Usheru and SuprNation experience routes, each with a scoped theme
+  based on the [Usheru brand guide](https://usheru.com/branding/) and
+  [SuprNation’s official site](https://www.suprnation.com/).
 - Angular’s esbuild builder, Vitest with jsdom, ESLint, and Prettier.
 - Local Nx task caching. GitHub Actions runs a clean install and `npm run check`.
 - No extra libraries or E2E framework until there is functionality to justify them.
@@ -67,6 +68,4 @@ Revisit that override when upgrading Nx.
 Compatibility was checked against the installed package metadata and the
 [Angular version requirements](https://angular.dev/reference/versions).
 NgRx 22.0.1 supports Angular 22, but installation waits until the visitor-state
-milestone chooses Store + Effects or SignalStore. Additional company themes,
-ratings, favourites, and deployment remain future milestones. Next, add the SuprNation
-experience using the same page structure and a separate scoped theme.
+milestone chooses Store + Effects or SignalStore. Ratings, favourites, and deployment remain future milestones. The next milestone is to choose visitor-state management and define which work items visitors can rate or save.

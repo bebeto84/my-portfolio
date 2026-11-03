@@ -4,6 +4,7 @@ import { RouterTestingHarness } from '@angular/router/testing';
 import { appRoutes } from './app.routes';
 import { Home } from './home';
 import { UsheruExperience } from './usheru-experience';
+import { SuprNationExperience } from './suprnation-experience';
 
 describe('portfolio routes', () => {
   beforeEach(async () => {
@@ -32,5 +33,17 @@ describe('portfolio routes', () => {
       '100+ branded apps',
     );
     expect(page.querySelector('#ai-workflow')).not.toBeNull();
+  });
+
+  it('renders the SuprNation experience page', async () => {
+    const harness = await RouterTestingHarness.create();
+    await harness.navigateByUrl(
+      '/experience/suprnation',
+      SuprNationExperience,
+    );
+
+    const page = harness.routeNativeElement as HTMLElement;
+    expect(page.querySelector('h1')?.textContent).toContain('gaming frontends');
+    expect(page.querySelector('#frontend-foundations')).not.toBeNull();
   });
 });

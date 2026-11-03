@@ -1,0 +1,106 @@
+<main class="experience-page" [attr.data-brand]="experience().brandId">
+  <a class="back-link" routerLink="/" fragment="work">
+    <span aria-hidden="true">←</span> Selected work
+  </a>
+
+  <section class="experience-hero" aria-labelledby="experience-title">
+    <div class="experience-intro">
+      <p class="eyebrow">
+        <span class="brand-mark" aria-hidden="true">{{ experience().company[0] }}</span>
+        COMPANY EXPERIENCE <span class="eyebrow-separator">·</span>
+        {{ experience().company }}
+      </p>
+      <h1 id="experience-title">
+        {{ experience().heroTitle }}<br /><span>{{ experience().heroAccent }}</span>
+      </h1>
+      <p class="experience-lede">{{ experience().summary }}</p>
+    </div>
+
+    <dl class="role-card">
+      <div>
+        <dt>Role</dt>
+        <dd>{{ experience().role }}</dd>
+      </div>
+      <div>
+        <dt>Dates</dt>
+        <dd>{{ experience().dates }}</dd>
+      </div>
+      <div>
+        <dt>Focus</dt>
+        <dd>{{ experience().focus }}</dd>
+      </div>
+    </dl>
+  </section>
+
+  @for (section of experience().sections; track section.id) {
+    <section
+      class="experience-section"
+      [class.workflow-section]="!!section.steps?.length"
+      [id]="section.id"
+    >
+      <div class="section-number">
+        {{ section.number }} <span>— {{ section.label }}</span>
+      </div>
+      <div class="section-copy">
+        <p class="eyebrow">{{ section.eyebrow }}</p>
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.description }}</p>
+      </div>
+
+      @if (section.cards; as cards) {
+        <div class="feature-grid">
+          @for (card of cards; track card.title) {
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">
+                {{ $index + 1 }}
+              </span>
+              <h3>{{ card.title }}</h3>
+              <p>{{ card.description }}</p>
+            </article>
+          }
+        </div>
+      }
+
+      @if (section.steps; as steps) {
+        <ol class="workflow-steps">
+          @for (step of steps; track step.title) {
+            <li>
+              <span>{{ $index + 1 }}</span>
+              <div>
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+              </div>
+            </li>
+          }
+        </ol>
+      }
+    </section>
+  }
+
+  @if (experience().practice; as practice) {
+    <section class="engineering-practice" aria-labelledby="practice-title">
+      <p class="eyebrow">{{ practice.eyebrow }}</p>
+      <h2 id="practice-title">{{ practice.title }}</h2>
+      <p>{{ practice.description }}</p>
+      <div class="technology-list" aria-label="Tools and technologies">
+        @for (technology of practice.technologies; track technology) {
+          <span>{{ technology }}</span>
+        }
+      </div>
+    </section>
+  }
+
+  <section class="experience-contact" aria-label="Contact">
+    <p>{{ experience().contactText }}</p>
+    <div class="contact-links">
+      <a href="mailto:msolervlc@gmail.com">Email Miguel <span>↗</span></a>
+      <a
+        href="https://www.linkedin.com/in/msolervlc"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn <span>↗</span>
+      </a>
+    </div>
+  </section>
+</main>

@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CompanyExperiencePage } from './company-experience-page';
+import { usheruExperience } from './experience-content';
 
 @Component({
   selector: 'app-usheru-experience',
-  imports: [RouterLink],
+  imports: [CompanyExperiencePage],
   templateUrl: './usheru-experience.html',
   styleUrl: './usheru-experience.scss',
 })
-export class UsheruExperience {}
+export class UsheruExperience {
+  readonly experience = usheruExperience;
+}
