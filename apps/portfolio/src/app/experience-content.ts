@@ -1,3 +1,5 @@
+import { rateableItems, RateableItemId } from './visitor-state/rateable-items';
+
 export interface ExperienceCard {
   title: string;
   description: string;
@@ -15,6 +17,7 @@ export interface ExperienceSection {
   eyebrow: string;
   title: string;
   description: string;
+  rateableId?: RateableItemId;
   cards?: ExperienceCard[];
   steps?: ExperienceStep[];
 }
@@ -53,6 +56,7 @@ export const usheruExperience: CompanyExperienceContent = {
   sections: [
     {
       id: 'platform',
+      rateableId: rateableItems.usheruPlatform,
       number: '01',
       label: 'PLATFORM',
       eyebrow: 'SHARED BY DESIGN',
@@ -78,6 +82,7 @@ export const usheruExperience: CompanyExperienceContent = {
     },
     {
       id: 'ai-workflow',
+      rateableId: rateableItems.usheruWorkflow,
       number: '02',
       label: 'ENGINEERING WORKFLOW',
       eyebrow: 'AI-ASSISTED, HUMAN-REVIEWED',
@@ -137,6 +142,7 @@ export const suprnationExperience: CompanyExperienceContent = {
   sections: [
     {
       id: 'frontend-foundations',
+      rateableId: rateableItems.suprnationPlatform,
       number: '01',
       label: 'SHARED FRONTEND PLATFORM',
       eyebrow: 'THREE BRANDS, SHARED LIBRARIES',

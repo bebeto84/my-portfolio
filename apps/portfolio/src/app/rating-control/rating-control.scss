@@ -1,0 +1,84 @@
+:host {
+  display: block;
+  margin: 0 0.75rem 0.85rem;
+  color: var(--color-text-muted, #59604f);
+  font-family: var(--font-body, sans-serif);
+}
+
+.rating-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+.rating-caption {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.58rem;
+}
+
+.rating-caption strong {
+  color: var(--color-text, #24251f);
+  font-size: 0.64rem;
+}
+
+.rating-caption span {
+  color: var(--color-text-muted, #59604f);
+}
+
+.rating-options {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.rating-options button {
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0.2rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: transparent;
+  color: #a7a193;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.rating-options button.filled {
+  color: var(--color-accent, #d28a37);
+}
+
+.rating-options button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.rating-options button:focus-visible,
+.clear-rating:focus-visible {
+  outline: 3px solid var(--color-focus, #315b48);
+  outline-offset: 2px;
+}
+
+.clear-rating {
+  margin-left: 0.45rem;
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-disabled, #eee);
+  color: var(--color-on-disabled, #555);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.55rem;
+}
+
+.storage-note {
+  flex-basis: 100%;
+  margin: 0.2rem 0 0;
+  font-size: 0.56rem;
+}

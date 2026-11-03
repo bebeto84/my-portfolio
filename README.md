@@ -42,6 +42,8 @@ content already rendered. The output is static and does not need a Node server.
 - Prerendered Usheru and SuprNation experience routes, each with a scoped theme
   based on the [Usheru brand guide](https://usheru.com/branding/) and
   [SuprNation’s official site](https://www.suprnation.com/).
+- Accessible 1–5 personal ratings for three work items, held in NgRx and saved
+  to tab-scoped session storage without affecting prerendered content.
 - Angular’s esbuild builder, Vitest with jsdom, ESLint, and Prettier.
 - Local Nx task caching. GitHub Actions runs a clean install and `npm run check`.
 - No extra libraries or E2E framework until there is functionality to justify them.
@@ -56,6 +58,7 @@ content already rendered. The output is static and does not need a Node server.
 | Angular and Angular CLI | 22.2.2  |
 | TypeScript              | 6.0.3   |
 | RxJS                    | 7.8.2   |
+| NgRx Store and Effects  | 22.0.1  |
 | Vitest                  | 4.1.11  |
 
 All direct dependencies have exact versions in `package.json`; transitive versions
@@ -67,5 +70,7 @@ Revisit that override when upgrading Nx.
 
 Compatibility was checked against the installed package metadata and the
 [Angular version requirements](https://angular.dev/reference/versions).
-NgRx 22.0.1 supports Angular 22, but installation waits until the visitor-state
-milestone chooses Store + Effects or SignalStore. Ratings, favourites, and deployment remain future milestones. The next milestone is to choose visitor-state management and define which work items visitors can rate or save.
+NgRx 22.0.1 supports Angular 22. The project uses Store + Effects for visitor
+ratings, which are private to the current tab session. Favourites, deployment,
+and the state-feature implementation skill remain future milestones. The next
+milestone is to document that workflow based on the ratings implementation.

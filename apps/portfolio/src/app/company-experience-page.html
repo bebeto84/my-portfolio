@@ -45,6 +45,12 @@
         <p class="eyebrow">{{ section.eyebrow }}</p>
         <h2>{{ section.title }}</h2>
         <p>{{ section.description }}</p>
+        @if (section.rateableId; as rateableId) {
+          <app-rating-control
+            [itemId]="rateableId"
+            [itemLabel]="section.title"
+          />
+        }
       </div>
 
       @if (section.cards; as cards) {
