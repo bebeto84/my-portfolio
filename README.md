@@ -1,7 +1,9 @@
 # Miguel’s portfolio
 
-A minimal Angular application in an Nx workspace. The home page contains draft
-placeholder content.
+A mobile-first Angular portfolio in an Nx workspace. The home page is
+prerendered as static HTML. Career copy is based on the supplied 2026 technical
+CV; public case-study links and supporting evidence can be added as they are
+selected.
 
 ## Setup
 
@@ -27,13 +29,16 @@ npm run check    # Lint, tests, and production build
 ```
 
 All scripts run through Nx. Production files are written to
-`dist/apps/portfolio/browser`. This first milestone uses client rendering;
-prerendered route HTML and static-host routing are the next milestone.
+`dist/apps/portfolio/browser`; the home page is emitted as `index.html` with its
+content already rendered. The output is static and does not need a Node server.
 
 ## Foundation
 
 - One app: `apps/portfolio`, with standalone components, zoneless Angular,
   strict TypeScript, router configuration, and SCSS.
+- Responsive portfolio shell with keyboard focus styles, reduced-motion
+  support, and a small semantic colour and typography token set.
+- Angular prerendering for the home route with hydration for client interaction.
 - Angular’s esbuild builder, Vitest with jsdom, ESLint, and Prettier.
 - Local Nx task caching. GitHub Actions runs a clean install and `npm run check`.
 - No extra libraries or E2E framework until there is functionality to justify them.
@@ -60,5 +65,7 @@ Revisit that override when upgrading Nx.
 Compatibility was checked against the installed package metadata and the
 [Angular version requirements](https://angular.dev/reference/versions).
 NgRx 22.0.1 supports Angular 22, but installation waits until the visitor-state
-milestone chooses Store + Effects or SignalStore. Prerendering, company themes,
-ratings, favourites, and deployment also remain future milestones.
+milestone chooses Store + Effects or SignalStore. Company themes, ratings,
+favourites, and deployment remain future milestones. Next, expand the Usheru
+work into a dedicated experience page and add supporting case-study links when
+they are available.

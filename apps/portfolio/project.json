@@ -21,7 +21,13 @@
             "input": "apps/portfolio/public"
           }
         ],
-        "styles": ["apps/portfolio/src/styles.scss"]
+        "styles": ["apps/portfolio/src/styles.scss"],
+        "server": "apps/portfolio/src/main.server.ts",
+        "prerender": true,
+        "outputMode": "static",
+        "security": {
+          "allowedHosts": []
+        }
       },
       "configurations": {
         "production": {
@@ -33,8 +39,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "12kb",
+              "maximumError": "16kb"
             }
           ],
           "outputHashing": "all"

@@ -17,6 +17,7 @@
     "@nx/web": "23.3.0",
     "@schematics/angular": "22.2.2",
     "@swc/helpers": "0.5.23",
+    "@types/node": "^22.0.0",
     "@typescript-eslint/utils": "8.71.2",
     "angular-eslint": "22.6.0",
     "eslint": "9.39.5",
@@ -35,7 +36,9 @@
     "@angular/core": "22.2.2",
     "@angular/forms": "22.2.2",
     "@angular/platform-browser": "22.2.2",
+    "@angular/platform-server": "22.2.2",
     "@angular/router": "22.2.2",
+    "@angular/ssr": "22.2.2",
     "rxjs": "7.8.2"
   },
   "scripts": {

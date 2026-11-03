@@ -8,12 +8,15 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('should render title', async () => {
+  it('should render the portfolio introduction and selected work', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Miguel’s portfolio',
+      'care and clarity',
+    );
+    expect(compiled.querySelector('#work h2')?.textContent).toContain(
+      'Selected work',
     );
   });
 });
